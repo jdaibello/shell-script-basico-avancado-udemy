@@ -17,7 +17,10 @@
 # Histórico:
 #
 #   v1.0 18/08/2023, João Pedro:
-#       - O que mudou?
+#       - Adicionando flags -s, -h e -v
+#   v1.1 03/10/2023, João Pedro:
+#       - Trocamos IF por CASE
+#       - Adicionamos basename
 # ------------------------------------------------------------------------ #
 # Testado em:
 #   bash 4.4.19
@@ -27,39 +30,20 @@
 
 USUARIOS="$(cat /etc/passwd | cut -d : -f 1)"
 MENSAGEM_USO="
-    $0 - [OPÇÕES]
-
-    -h - Menu de ajuda
-    -v - Versão
-    -s - Ordenar a saída
+    $(basename $0) - [OPÇÕES]
+        -h - Menu de ajuda
+        -v - Versão
+        -s - Ordenar a saída
 "
-VERSAO="v1.0"
-
-# ------------------------------------------------------------------------ #
-
-# ------------------------------ TESTES ---------------------------------- #
-
-
-
-# ------------------------------------------------------------------------ #
-
-# ------------------------------ FUNÇÕES --------------------------------- #
-# ------------------------------------------------------------------------ #
+VERSAO="v1.1"
 
 # ----------------------------- EXECUÇÃO --------------------------------- #
 
-if [ "$1" = "-h" ]; then
-    echo "$MENSAGEM_USO" && exit 0;
-fi
-
-if [ "$1" = "-v" ]; then
-    echo "$VERSAO" && exit 0
-fi
-
-if [ "$1" = "-s" ]; then
-    echo "$USUARIOS" | sort && exit 0
-fi
-
-echo "$USUARIOS"
+case "$1" in
+    -h) echo "$MENSAGEM_USO" && exit 0    ;;
+    -v) echo "$VERSAO" && exit 0          ;;
+    -s) echo "$USUARIOS" | sort && exit 0 ;;
+    *)  echo "$USUARIOS"                  ;;
+esac
 
 # ------------------------------------------------------------------------ #
