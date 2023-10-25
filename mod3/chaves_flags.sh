@@ -17,13 +17,16 @@
 # Histórico:
 #
 #   v1.0 18/08/2023, João Pedro:
-#       - Adicionando flags -s, -h e -v
-#   v1.1 03/10/2023, João Pedro:
+#       - Adicionamos flags -s, -h e -v
+#   v1.1 24/10/2023, João Pedro:
 #       - Trocamos IF por CASE
 #       - Adicionamos basename
-#   v1.2 03/10/2023, João Pedro:
-#       - Adicionamos chaves
-#       - Adicionamos opção pra exibir usuários em maiúsculo
+#   v1.2 24/10/2023, João Pedro:
+#       - Adicionamos 2 chaves (flags)
+#       - Adicionamos opção pra exibir usuários em maiúsculo: -m
+#   v1.3 25/10/2023, João Pedro:
+#       - Adicionamos while com shift e teste de variável
+#       - Adicionamos 2 chaves (flags)
 # ------------------------------------------------------------------------ #
 # Testado em:
 #   bash 4.4.19
@@ -39,21 +42,26 @@ MENSAGEM_USO="
         -s - Ordenar a saída
         -m - Coloca em maiúsculo
 "
-VERSAO="v1.2"
+VERSAO="v1.3"
 CHAVE_ORDENA=0
 CHAVE_MAIUSCULO=0
 
 # ----------------------------- EXECUÇÃO --------------------------------- #
+while test -n "$1" # -n verifica se variável está nula
+do
+    case "$1" in
+        -h) echo "$MENSAGEM_USO" && exit 0                ;;
+        -v) echo "$VERSAO" && exit 0                      ;;
+        -s) CHAVE_ORDENA=1                                ;;
+        -m) CHAVE_MAIUSCULO=1                             ;;
+        *)  echo "Opção inválida, valide o -h." && exit 1 ;;
+    esac
+    shift # Troca a variável $1 por $2 na primeira iteração e assim por diante
+done
 
-case "$1" in
-    -h) echo "$MENSAGEM_USO" && exit 0 ;;
-    -v) echo "$VERSAO" && exit 0       ;;
-    -s) CHAVE_ORDENA=1                 ;;
-    -m) CHAVE_MAIUSCULO=1              ;;
-    *)  echo "$USUARIOS"               ;;
-esac
+[ $CHAVE_ORDENA -eq 1 ] && USUARIOS=$(echo "$USUARIOS" | sort) # Para conseguir combinar as duas opções
+[ $CHAVE_MAIUSCULO -eq 1 ] && USUARIOS=$(echo "$USUARIOS" | tr [a-z] [A-Z])
 
-[ $CHAVE_ORDENA -eq 1 ] && echo "$USUARIOS" | sort
-[ $CHAVE_MAIUSCULO -eq 1 ] && echo "$USUARIOS" | tr [a-z] [A-Z]
+echo "$USUARIOS"
 
 # ------------------------------------------------------------------------ #
