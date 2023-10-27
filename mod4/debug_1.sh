@@ -60,9 +60,11 @@ do
     shift # Troca a variável $1 por $2 na primeira iteração e assim por diante
 done
 
+set -x # Mostra debug apenas nesse trecho de código (até o set +x)
 [ $CHAVE_ORDENA -eq 1 ] && USUARIOS=$(echo "$USUARIOS" | sort) # Para conseguir combinar as duas opções
 [ $CHAVE_MAIUSCULO -eq 1 ] && USUARIOS=$(echo "$USUARIOS" | tr '[:lower:]' '[:upper:]')
 
 echo "$USUARIOS"
+set +x
 
 # ------------------------------------------------------------------------ #
