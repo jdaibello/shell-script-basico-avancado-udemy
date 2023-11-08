@@ -1,0 +1,30 @@
+Fedora 39 Officially Released: This is What's New
+Fedora Linux 39 is officially here!
+What's new in Fedora Workstation 39
+Upgrade to Fedora 39 from Fedora 38 Workstation (GUI and CLI)
+ How to Upgrade to Fedora 39 from Fedora 38
+How to Install Mattermost on AlmaLinux
+LXQt 1.4.0 Desktop: Best New Features
+Spectrum is a CLI Music Player for Linux
+Mondrian Theme: KDE Plasma Desktop with An Artistic Look
+ADLINK introduces EMU-200 Series IIoT Gateways
+Install Debian 12 "Bookworm" Step-by-Step Guide for Beginners
+ Ubuntu: The Flagship Distro of the Linux World
+Roadmap to elementary OS 8: Goals & Release Details
+Intel NUC 13 Pro Mini PC Running Linux: Gaming
+9to5Linux Weekly Roundup: November 5th, 2023
+ LXQt 1.4 Desktop Environment Released as the Last in Qt 5 Series
+i.MX 8M Plus SBC with Dual GbE & TSN support
+Linus Torvalds releases Linux 6.6
+Top 10 Best AUR Helpers for Arch Linux
+XPI-3566-ZERO comes in Raspberry Pi Zero 2W form-factor
+ Install VirtualBox on Manjaro Linux: A Step-by-Step Guide
+Android VPNs to get audit badges in Google Play Store if they aren't comically crap
+How to Install Linux Kernel 6.6 on Fedora 39/38
+19 Best Free and Open Source Linux Physics Tools
+LXQt 1.4 Desktop Environment Officially Released, This Is What’s New
+Install Win11 as KVM Guest on openSUSE Tumbleweed
+Mozilla tells extension developers to get ready to finally go mobile
+Why we're renaming 'Firefox accounts' to 'Mozilla accounts'
+Pebble’s Last Day — The Short Life of a Truly Social Site
+LibreOffice 7.5.8 Is Here as the Last Update in the Series, Upgrade to LibreOffice 7.6 Now
